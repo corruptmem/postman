@@ -1,1 +1,29 @@
-Listens for emails via AMQP and manages the delivery
+Listens for emails via AMQP and manages the delivery.
+
+
+Mail message format:
+
+
+{
+  "subject": "Email subject",
+  "text": "1234",
+  "html": "12<b>34</b>",
+  "from": "xyz@domain.com",
+
+  "attachments": [
+    {
+      "data": "x84maox09c...",
+      "type": "image/jpeg",
+      "inline": true,
+      "name": "file.jpg"
+    }
+  ]
+
+  "deliveries": [
+    {
+      "to": ["a@b.com", "b@c.com"],
+      "cc": ["x@y.com"]
+      "bcc": ["a@x.com"]
+    }
+  ]
+}

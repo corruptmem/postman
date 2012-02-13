@@ -5,6 +5,7 @@
   "description": "Listens for emails via AMQP and manages the delivery",
   "dependencies": {
     "amqp": "*",
-    "emailjs": "*"
+    "emailjs": "*",
+    "underscore": "*"
   }
 }
