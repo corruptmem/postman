@@ -1,0 +1,1 @@
+Listens for emails via AMQP and manages the delivery

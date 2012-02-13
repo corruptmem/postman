@@ -1,0 +1,10 @@
+{
+  "name": "postman",
+  "version": "0.0.1",
+  "author": "Cameron Harris <cameron@cameronharris.org>",
+  "description": "Listens for emails via AMQP and manages the delivery",
+  "dependencies": {
+    "amqp": "*",
+    "emailjs": "*"
+  }
+}
