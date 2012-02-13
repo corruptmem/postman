@@ -1,1 +1,1 @@
-exports.handle = local, domain -> "smtp"
+exports.handle = (addresses) -> "smtp"
