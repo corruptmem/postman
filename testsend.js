@@ -7,11 +7,11 @@ var message = {
   "from": "no-reply@corruptmem.com",
   "deliveries": [
    {
-      "to": ["me@cameronharris.org"],
-      "cc": ["cameron@cameronharris.org"]
+      "to": [["Cameron Harris", "me@cameronharris.org"]],
+      "cc": [["Cameron Harris", "cameron@cameronharris.org"]]
    },
    {
-    "to": ["me@corruptmem.org"]
+    "to": [["Corrupt Mem", "me@corruptmem.org"]]
    }
 
   ]

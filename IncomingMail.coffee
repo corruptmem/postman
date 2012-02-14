@@ -24,9 +24,9 @@ class IncomingMail
 
     for delivery in msg.deliveries
       recipients = []
-      recipients.push(delivery.to) if delivery.to?
-      recipients.push(delivery.cc) if delivery.cc?
-      recipients.push(delivery.bcc) if delivery.bcc?
+      recipients.push(r[1] for r in delivery.to) if delivery.to?
+      recipients.push(r[1] for r in delivery.cc) if delivery.cc?
+      recipients.push(r[1] for r in delivery.bcc) if delivery.bcc?
       
       recipients = _.flatten(recipients)
       splitRecipients = (recipient.split("@") for recipient in recipients when recipient.split("@").length == 2)
@@ -35,6 +35,10 @@ class IncomingMail
       thisDelivery = _.clone(msg)
       _.extend(thisDelivery, delivery)
       delete thisDelivery.deliveries
+
+      thisDelivery.to = r[0] + " <" + r[1] + ">" for r in thisDelivery.to if thisDelivery.to?
+      thisDelivery.cc = r[0] + " <" + r[1] + ">" for r in thisDelivery.cc if thisDelivery.cc?
+      thisDelivery.bcc = r[0] + " <" + r[1] + ">" for r in thisDelivery.bcc if thisDelivery.bcc?
 
       newDeliveries.push([thisDelivery, routingKey])
 
