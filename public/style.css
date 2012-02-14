@@ -14,3 +14,9 @@ table td, table th {
   border: 1px solid #aaa;
   padding: 6px;
 }
+
+.html, .plain {
+  background: #ddd;
+  padding: 10px;
+  width: 700px;
+}

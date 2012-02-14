@@ -1,0 +1,30 @@
+h1= "Failed: " + item.mail.subject
+
+div
+  b From: 
+  span= item.mail.from
+
+div
+  b To: 
+  span= item.mail.to
+
+div
+  b Cc: 
+  span= item.mail.cc
+
+div
+  b Bcc: 
+  span= item.mail.bcc
+
+div
+  b Date: 
+  span= item.date
+
+h2 Plain text
+div(class="plain")= item.mail.text
+
+h2 HTML
+div(class="html")!= item.mail.html
+
+p
+  a(href="/failed") [Back to list]

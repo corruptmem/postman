@@ -6,7 +6,8 @@ class FailedHandler
     @connection.exchange("mailexchange", {type: "direct"}, @exchCreated)
     @failed = []
 
-    @express.get("/failed", @web)
+    @express.get("/failed", @failedList)
+    @express.get("/failed/:id", @failedItem)
 
   queueCreated: (queue) =>
     @queue = queue
@@ -21,11 +22,16 @@ class FailedHandler
     @queue.subscribe({ack: true}, @handle)
 
   handle: (msg, headers, deliveryInfo) =>
-    @failed.push(msg)
+    insertId = @failed.push(msg)
+    msg.id = insertId - 1
+    msg.date = new Date()
     @queue.shift()
 
-  web: (req, res) =>
+  failedList: (req, res) =>
     res.render("failed.jade", {pageTitle: "Failed emails", failed: @failed})
-    res.send()
+
+  failedItem: (req, res) =>
+    console.log(@failed[req.params.id])
+    res.render("failedItem.jade", {pageTitle: "Failed email", item: @failed[req.params.id]})
 
 module.exports = FailedHandler
