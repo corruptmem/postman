@@ -6,6 +6,8 @@
   "dependencies": {
     "amqp": "*",
     "nodemailer": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "express": "*",
+    "jade": "*"
   }
 }

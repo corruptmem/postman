@@ -7,7 +7,7 @@ class SmtpHandler
     @connection.exchange("mailexchange", {type: "direct"}, @exchCreated)
     @transport = nodemailer.createTransport("SMTP", {
       host: "localhost",
-      port: 1025,
+      port: 1026,
 #      auth: {user: "corruptmem", pass: "413737fe4c534eb7a8e96be3a6cb86b7"}
     })
 

@@ -1,0 +1,17 @@
+h1 Failed Emails
+table
+  thead
+    tr
+      th Subject
+      th To
+      th Cc
+      th Bcc
+      th From
+  tbody
+    each failedMail in failed
+      tr
+        td= failedMail.mail.subject
+        td= failedMail.mail.to
+        td= failedMail.mail.cc
+        td= failedMail.mail.bcc
+        td= failedMail.mail.from

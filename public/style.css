@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  background: #fdd;
+}
+
+table td, table th {
+  border: 1px solid #aaa;
+  padding: 6px;
+}
